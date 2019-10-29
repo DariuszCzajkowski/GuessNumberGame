@@ -5,19 +5,12 @@ import java.util.Scanner;
 public class Main {
 
 
-    private static int randomNumber(int range) {
-        double chosen =Math.random() *range;
-        chosen = chosen + 1;
-        int chosenNumber= (int) chosen;
-        return chosenNumber;
 
-
-        }
 
 
     public static void main(String[] args) {
         // write your code here
-        int random = randomNumber(100);
+        int chosen = (int)(Math.random()*100)+1;
         int index = 10;
         Scanner scanner = new Scanner(System.in);
         System.out.println("start the game");
@@ -29,19 +22,19 @@ public class Main {
 
             int guessNumber = scanner.nextInt();
 
-            if (guessNumber == random) {
+            if (guessNumber == chosen) {
                 System.out.println("You Win great job");
                 return ;
-            } else if (guessNumber>random) {
+            } else if (guessNumber>chosen) {
                 System.out.println("The number is smaller than " + guessNumber);
-            } else if (guessNumber<random){
+            } else if (guessNumber<chosen){
                     System.out.println("The number is greater than "+ guessNumber);
                 }
 
 
             else if (index==1)
             {
-                System.out.println("you loooooosssssse , the number was: "+random);
+                System.out.println("you loooooosssssse , the number was: "+chosen);
             }
             index--;
 
